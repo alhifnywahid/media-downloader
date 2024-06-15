@@ -73,6 +73,7 @@ function App() {
                   data.thumbnail ? "" : "skeleton"
                 }`}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {data.nowm ? "Watermark" : ""}
               </a>
@@ -82,6 +83,7 @@ function App() {
                   data.thumbnail ? "" : "skeleton"
                 }`}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {data.nowm ? "Tanpa Watermark" : ""}
               </a>
@@ -91,6 +93,7 @@ function App() {
                   data.thumbnail ? "" : "skeleton"
                 }`}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {data.nowm ? "Audio" : ""}
               </a>
