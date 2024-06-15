@@ -72,6 +72,7 @@ function App() {
                 className={`btn btn-primary w-full ${
                   data.thumbnail ? "" : "skeleton"
                 }`}
+                download
               >
                 {data.nowm ? "Watermark" : ""}
               </a>
@@ -80,6 +81,7 @@ function App() {
                 className={`btn btn-primary w-full ${
                   data.thumbnail ? "" : "skeleton"
                 }`}
+                download
               >
                 {data.nowm ? "Tanpa Watermark" : ""}
               </a>
@@ -88,6 +90,7 @@ function App() {
                 className={`btn btn-primary w-full ${
                   data.thumbnail ? "" : "skeleton"
                 }`}
+                download
               >
                 {data.nowm ? "Audio" : ""}
               </a>
