@@ -26,10 +26,10 @@ function App() {
         .then((res) => {
           if (res.data.status) {
             setData(res.data.result);
-          } else {
-            console.log(res.data.result.nowm);
           }
         });
+    } else {
+      document.getElementById("my_modal_2").showModal();
     }
   }
 
@@ -44,7 +44,7 @@ function App() {
         <form onSubmit={submitHandler} className="join">
           <input
             className="input input-bordered join-item"
-            placeholder="link tiktok bro"
+            placeholder="https://vt.tiktok.com/xxxxxxxx"
           />
           <button type="submit" className="btn btn-outline join-item ">
             Download
@@ -94,6 +94,20 @@ function App() {
             </div>
           </div>
         </div>
+        <dialog id="my_modal_2" className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">Masukkan Link Tiktok!</h3>
+            <p className="py-4">
+              Contoh :{" "}
+              <span className="text-blue-500">
+                https://vt.tiktok.com/ZSYD5QHt2
+              </span>
+            </p>
+          </div>
+          <form method="dialog" className="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
       <div className="navbar fixed bottom-0 left-0 w-full p-6 bg-slate-800 flex justify-center items-center join gap-4">
         {links.map((link) => (
