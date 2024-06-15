@@ -6,6 +6,10 @@ import { useState } from "react";
 function App() {
   const [data, setData] = useState({});
   const [display, setDisplay] = useState(false);
+  const [inputVal, setInputVal] = useState(localStorage.getItem("tturl") || "");
+  function inputValHandler(e) {
+    setInputVal(e.target.value);
+  }
   function handlerTheme(e) {
     const theme = e.target.checked;
     if (theme) {
@@ -19,7 +23,8 @@ function App() {
     e.preventDefault();
     const value = e.target.children[0].value;
     setData({});
-    if (value) {
+    if (value.includes("tiktok")) {
+      localStorage.setItem("tturl", value);
       setDisplay(true);
       axios
         .get(`https://gopretapi.vercel.app/api/downloader/tiktok?url=${value}`)
@@ -45,6 +50,8 @@ function App() {
           <input
             className="input input-bordered join-item"
             placeholder="https://vt.tiktok.com/xxxxxxxx"
+            value={inputVal}
+            onChange={inputValHandler}
           />
           <button type="submit" className="btn btn-outline join-item ">
             Download
@@ -63,6 +70,7 @@ function App() {
             <img
               className={`${data.thumbnail ? "h-full" : ""}`}
               src={data.thumbnail}
+              loading="lazy"
             />
           </figure>
           <div className="card-body">
