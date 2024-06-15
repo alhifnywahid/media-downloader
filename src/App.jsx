@@ -68,32 +68,29 @@ function App() {
           <div className="card-body">
             <div className="card-actions justify-center items-center flex-col gap-4 w-60">
               <a
-                href={data.nowm}
+                href={data.nowm && data.nowm.replace("http://", "https://")}
                 className={`btn btn-primary w-full ${
                   data.thumbnail ? "" : "skeleton"
                 }`}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 {data.nowm ? "Watermark" : ""}
               </a>
               <a
-                href={data.watermark}
+                href={
+                  data.watermark &&
+                  data.watermark.replace("http://", "https://")
+                }
                 className={`btn btn-primary w-full ${
                   data.thumbnail ? "" : "skeleton"
                 }`}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 {data.nowm ? "Tanpa Watermark" : ""}
               </a>
               <a
-                href={data.audio}
+                href={data.audio && data.audio.replace("http://", "https://")}
                 className={`btn btn-primary w-full ${
                   data.thumbnail ? "" : "skeleton"
                 }`}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 {data.nowm ? "Audio" : ""}
               </a>
