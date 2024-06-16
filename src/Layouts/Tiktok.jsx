@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import Header from "../components/Header";
 import { tiktok } from "../config/data";
@@ -19,25 +19,22 @@ function Tiktok() {
       setDisplay(true);
       const response = await tiktok(value);
       if (response.status) {
-        console.log(response);
         setData(response);
-        console.log(data);
       }
     } else {
       document.getElementById("my_modal_2").showModal();
     }
   }
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  // useEffect(() => {
+  // }, [data]);
 
   return (
     <>
       <Header />
 
       <div className="flex justify-center items-center h-screen flex-col gap-10  bg-slate-200 text-black dark:text-slate-50  dark:bg-base-100">
-        <h1>Tiktok Downloader</h1>
+        <h1 className="text-3xl">Tiktok Downloader</h1>
         <form onSubmit={submitHandler} className="join">
           <input
             className="input input-bordered join-item bg-transparent border-base-100 dark:border-slate-100"
@@ -52,13 +49,6 @@ function Tiktok() {
             Download
           </button>
         </form>
-        {/* <div className={`inti w-[150px] ${display ? "block" : "hidden"}`}>
-          {data.status ? (
-            <img className="w-full" src={data.result.thumb} />
-          ) : (
-            <span>Loading...</span>
-          )}
-        </div> */}
         <div
           className={`show-message card card-side bg-inherit shadow-[0_0_3px_black] justify-center items-center gap-5 p-10 ${
             display ? "" : "hidden"
@@ -96,7 +86,7 @@ function Tiktok() {
                     {data.status && "Tanpa Watermark"}
                   </a>
                   <a
-                    href={data.status && data.result.audio}
+                    href={data.result.audio}
                     className={`btn btn-primary w-full ${
                       data.status ? "" : "skeleton"
                     }`}
