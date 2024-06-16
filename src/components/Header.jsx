@@ -3,17 +3,13 @@ import { Navbar2 } from "./Navbar";
 
 function Header() {
   const [theme, setTheme] = useState(true);
-  
-  function handlerTheme(e) {
-    setTheme(e.target.checked);
-  }
   if (theme) {
     document.documentElement.classList.add("dark");
   } else {
     document.documentElement.classList.remove("dark");
-  } 
+  }
   return (
-    <div className="header shadow-3xl sticky top-0 bg-slate-200 text-black dark:text-slate-50  dark:bg-base-100">
+    <div className="header shadow-3xl fixed top-0 w-full bg-slate-200 text-black dark:text-slate-50  dark:bg-base-100">
       <div className="navbar lg:w-5/6 mx-auto">
         <div className="navbar-start">
           <a className="btn btn-ghost text-xl">Media Downloader</a>
@@ -27,7 +23,7 @@ function Header() {
               type="checkbox"
               className="theme-controller"
               value="synthwave"
-              onChange={handlerTheme}
+              onChange={(e) => setTheme(e.target.checked)}
               checked={theme}
             />
             <svg
