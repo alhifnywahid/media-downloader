@@ -1,14 +1,17 @@
-import { Navbar2 } from "./Navbar"
+import { useState } from "react";
+import { Navbar2 } from "./Navbar";
 
 function Header() {
+  const [theme, setTheme] = useState(true);
+  
   function handlerTheme(e) {
-    const theme = e.target.checked;
-    if (theme) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    setTheme(e.target.checked);
   }
+  if (theme) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  } 
   return (
     <div className="header shadow-3xl sticky top-0 bg-slate-200 text-black dark:text-slate-50  dark:bg-base-100">
       <div className="navbar lg:w-5/6 mx-auto">
@@ -19,14 +22,13 @@ function Header() {
           <Navbar2 />
         </div>
         <div className="navbar-end">
-          <label
-            className="swap swap-rotate btn btn-ghost text-xl"
-            onClick={handlerTheme}
-          >
+          <label className="swap swap-rotate btn btn-ghost text-xl">
             <input
               type="checkbox"
               className="theme-controller"
               value="synthwave"
+              onChange={handlerTheme}
+              checked={theme}
             />
             <svg
               className="swap-off fill-current w-10 h-10"
@@ -46,7 +48,7 @@ function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

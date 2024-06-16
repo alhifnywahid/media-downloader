@@ -6,7 +6,16 @@ export default {
 	theme: {
 		boxShadow: {
 			'3xl': '0 0 5px rgba(0, 0, 0, 0.5)',
-		}
+		},
+    fontFamily: {
+      sans: [
+        '"Inter var", sans-serif',
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
+    },
 	},
 	plugins: [daisyui],
 };
