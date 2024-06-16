@@ -50,7 +50,7 @@ function Tiktok() {
           </button>
         </form>
         <div
-          className={`show-message card card-side bg-inherit shadow-[0_0_3px_black] justify-center items-center gap-5 p-10 ${
+          className={`show-message card card-side bg-inherit shadow-[0_0_3px_black] justify-center items-center gap-5 p-10 sm:w-auto w-[80%] ${
             display ? "" : "hidden"
           }`}
         >
@@ -68,7 +68,7 @@ function Tiktok() {
                 />
               </figure>
               <div className="card-body p-0">
-                <div className="card-actions justify-center items-center flex-col gap-4 w-60">
+                <div className="card-actions justify-center items-center flex-col gap-4 p-0 sm:w-60">
                   <a
                     href={data.status && data.result.wm}
                     className={`btn btn-primary w-full ${
